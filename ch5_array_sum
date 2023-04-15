@@ -1,0 +1,53 @@
+
+public class Array_sum_pre {
+	public static void main(String[]args) {
+		//total & average of array values
+		//pre_study
+		int[] score = new int[100];
+		int sum = 0;
+		
+		//giving random values(arrange 80~100)
+		for(int i = 0; i<score.length; i++) {
+				int j = ((int)(Math.random()*21))+80;
+				//int j = ((int)(Math.random()*20))+79;
+				//math.random*(arr.length+1) +location num 
+				
+				score[i] = j;
+				
+				
+		/*error		if (j <=100 && j >=80) {
+					score[i] = j;
+					else { j=(int)(Math.random()*100)+1
+					score[i] = j;
+					}
+					
+					= doesn't work (only values over 80 were put in score[i]
+					others dumped score[n] = 0!!!
+			}*/
+			
+		}
+		
+		for (int i = 0; i<score.length; i++) {
+			System.out.printf("score[%d] : %d\n",i,score[i]);
+		}
+		
+		
+		//(total)adding the all the values on sum variable
+		
+		for(int i=0; i<score.length; i++) {
+				sum += score[i];
+		}
+		System.out.println(sum);
+		
+		float average = (float)sum/score.length;
+		
+		System.out.println("average : "+(int)average);
+	
+		
+		
+		
+		
+		
+		//average
+	}
+}
