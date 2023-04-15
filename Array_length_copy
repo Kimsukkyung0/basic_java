@@ -1,0 +1,45 @@
+
+public class Array_pre {
+ public static void main(String[] args) {
+	 //changing the length and values of specific arrays
+	 //15 April,2023 Sat
+	 
+	 //creating new array with 5rooms
+	 
+	 int[] arr = {1,2,3,4,5};
+	 System.out.println("arr.length :"+arr.length);
+	 System.out.println();
+	 System.out.println("[Before]");
+	
+	 //print the values
+	 for (int i=0; i<arr.length; i++) {
+		 System.out.printf("arr[%d]:%d\n",i,arr[i]);
+	 }
+	 System.out.println();
+	 
+	 //creating new array with double length of original array 
+	 //I think it's because in case to expand or st else.
+
+	 int[] arr2 = new int[arr.length*2];
+	 
+	 
+	 //copying orgin > new
+	 
+	 for (int i=0; i<arr.length; i++) {
+		 arr2[i] = arr[i];
+	 }
+	 
+	 //copying new > origin
+	 arr = arr2;
+			 
+	 //print the after values and length
+	 
+	 System.out.println("arr2.length :"+arr2.length);
+	 System.out.println();
+	 System.out.println("[After]");
+	 
+	 for (int i=0; i<arr2.length; i++) {
+		 System.out.printf("arr2[%d]:%d\n",i,arr2[i]);
+	 }
+ }
+}
