@@ -1,0 +1,59 @@
+package com.green.java.ch05_4_14;
+// 번호 국어 영어 수학 총점 평균
+// 1  100  100  100 300 100.0
+//2    100  100 300 100.0
+
+
+public class ArrayEx19 {
+    public static void main(String[] args) {
+        int[][] score = {
+                {100, 100,100,20}
+                , {20, 20, 20,40}
+                , {30, 30, 30,50}
+                , {40, 40, 40,60}
+                , {50, 50, 70,70}
+        };
+        String[] subjects = {"국어","영어","수학","과학"};
+        System.out.print("번호\t");
+        for (int i = 0; i < subjects.length; i++) {
+            System.out.printf("%s\t", subjects[i]);
+        }
+        System.out.println("합계\t평균");
+        System.out.print("=========================");
+       
+        System.out.println();
+        
+//index values for printing
+        
+        for (int i = 0; i < score.length; i++) {
+            int sum =0;
+            System.out.printf("%d\t",i+1);
+
+            for (int j = 0; j < score[i].length; j++) {
+                System.out.printf("%d\t",score[i][j]);
+                sum +=score[i][j];
+            }
+
+            double avg=(double)sum/score[i].length;
+            System.out.printf("%d\t",sum);
+            System.out.printf("%.1f\t",avg);
+            System.out.println();
+        }
+        System.out.print("=========================");
+        System.out.println();
+        System.out.println("총점");
+
+        for (int i = 0; i < score.length; i++) {
+            int sum2 = 0;
+            for (int j = 0; j < score.length; j++) {
+               sum2 += score[j][i];
+
+            }
+            System.out.printf("%s : %d",subjects[i],sum2);
+            System.out.println();
+            
+//process of print
+        }
+       
+    }
+}
