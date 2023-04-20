@@ -1,0 +1,39 @@
+public class FlowEx18Method {
+    private static final int MIN_GUGUDAN = 1;
+    private static final int MAX_GUGUDAN = 9;
+
+    public static void main(String[] args) {
+
+        gugudan(5);
+        gugudan(2,8);
+        gugudan2(4);
+    }
+
+
+    public static void gugudan(int dan) {
+       for (int i = MIN_GUGUDAN; i <= MAX_GUGUDAN; i++) {
+            System.out.printf("%d X %d = %d",dan,i,dan*i);
+            System.out.println();
+        }
+    }
+
+    //generating the method having two parameters(=overriding)
+
+    public static void gugudan(int lDan, int rDan) {
+        for (int i = lDan; i <= rDan; i++) {
+                gugudan(i);
+            }
+    }
+
+    public static void gugudan2(int dan) {
+        for (int i = dan; i <=MAX_GUGUDAN ; i++) {
+            gugudan(i);
+        }
+        
+        // application : made to print (int dan ~9)*1~9 
+        //int dan(as a value put through the parameter) 
+        
+    }
+
+
+}
