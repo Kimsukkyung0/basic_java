@@ -1,0 +1,56 @@
+package PolyArgument;
+
+public class main {
+
+
+}
+
+class Product {
+	private int price;
+	private int bonuspoint;
+	private String grade;
+	
+	Product(int price){
+		this.price = price;
+		this.bonuspoint = (int)(price*0.1);
+		//S:silver = 5%, G:Gold = 10%, V:vip = 15% discount, N : new = 0%	
+	}
+
+	Grade (String grade){
+	switch (grade) {
+	
+	case"S" : 
+		this.price -= (price*0.05);
+		this.bonuspoint = (int)(price*0.2);
+		break;
+		
+	case"G" : 
+		this.price -= (price*0.1);
+		this.bonuspoint = (int)(price*0.3);
+		break;
+		
+	case"V" : 
+		this.price -= (price*0.15);
+		this.bonuspoint = (int)(price*0.5);
+		break;
+
+		}
+	}
+}
+
+class Tv extends Product{
+	Tv(){super(100);}
+	public String toString() {return "Tv";}
+}
+
+class Radio extends Product{
+	Radio(){super(50);}
+	public String toString() {return "Radio";}
+}
+
+class Dishwasher extends Product{
+	Dishwasher(){super(200);}
+	public String toString() {return "Dishwasher";}
+}
+
+
