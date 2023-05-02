@@ -1,56 +1,68 @@
-package com.green.javasub.ch4.BlackJackGame;
+package com.green.javasub.BlackJack;
 
-class CardDeck {
-    private final static String[] patterns = {"DIAMOND","HEART","CLOVER","SPADE"};
-    private final static int CARD_NUM = 13;
-    private String NUM=null;
-    private String pattern = null;
-    int idx = 0;
-    CardDeck[] cards = new CardDeck[patterns.length * CARD_NUM];
+import java.util.ArrayList;
+import java.util.List;
 
-     CardDeck(){
+public class CardDeck {
+    public static final String[] PATTERNS = {"♠","♣","♥","◈"};
+    public static final int CARD_COUNT = 13;
+    private List<Card> cardList;
 
-        for (int i = 0; i <patterns.length; i++) {
-            pattern = patterns[i];
-            for (int j = 1; j <= CARD_NUM; j++) {
-                switch(j){
-                    case 1 :
-                        NUM = "A";
-                        break;
-                    case 11:
-                        NUM = "J";
-                        break;
-                    case 12 :
-                        NUM = "Q";
-                        break;
-                    case 13 :
-                        NUM = "K";
-                        break;
-                    default :
-                        NUM = String.valueOf(i);
+//    public CardDeck() {
+//        this.cardList = new ArrayList<>();
+//        for (String pattern : PATTERNS) {
+//            for (int i = 1; i <= CARD_COUNT; i++) {
+//                this.cardList.add(new Card(pattern, getDenomination(i)));
+//            }
+//
+//        }
+//    }
+    private String getDenomination(int num){
+        switch(num){
+            case 1: return "A";
+            case 11: return "J";
+            case 12: return "Q";
+            case 13: return "K";
+            default : return String.valueOf(num);
 
+        }
+    }
 
-                        ///??더하면 될 것 같은데 왜안돼요 ==>카드 값을 받을 두개의 인자를 가진 카드 가없었음
-                }cards[idx++] = Card(pattern, NUM);
-
+public CardDeck(){
+    this.cardList = new ArrayList<>();
+        for (int i = 0; i < PATTERNS.length; i++) {
+                String pt = PATTERNS[i];
+            for (int j = 1; j < CARD_COUNT; j++) {
+                String sc = String.valueOf(j);
+                cardList.add(new Card(pt,sc));
+                }
             }
-        }
-    }
 
-    CardDeck Card(String pattern, String NUM){
-        this.pattern = pattern;
-        this.pattern = NUM;
-    } //carddeck 타입을 주었더니 리턴값을 내놓으라네@!!!!?!?
+        }//두번째삽질
 
-    void Shuffle(){
-      CardDeck cd = new CardDeck();
-        int n = (int)(Math.random()* (patterns.length * CARD_NUM));
-        for (int i = 0; i < cards.length; i++) {
 
-        }
-    }
-
+//            String num=null;
+//        for (int i = 0; i < PATTERNS.length; i++) {
+//            for (int j = 0; j <= CARD_COUNT; j++) {
+//                switch(j) {
+//                    case 1 :
+//                        num = "A";
+//                        break;
+//                    case 11 :
+//                        num = "J";
+//                        break;
+//                    case 12 :
+//                        num = "Q";
+//                        break;
+//                    case 13 :
+//                        num = "K";
+//                        break;
+//                    default :
+//                        num = String.valueOf(j);
+//
+//                }
+//            }this.cardList.add(new Card(PATTERNS[i],num));
+//        첫번째삽질
 
 
 }
-
