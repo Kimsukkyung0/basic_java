@@ -17,25 +17,15 @@ public abstract class User {
 		return usercards;
 	}
 	
-	private int getScore(List<Card> c) {
-		int score = 0;
-		for(Card cd : c) {
-            //Tried to use enhanced for syntax to simplify..approach to the value...that i want.....
-            
-			String tmp = cd.getDenomination();
-        	switch(tmp) {
-			case "A": 
-				score+=1;
-				break;
-			case "J" :
-			case "Q" :
-			case "K" : 
-				score+=10;
-				break;
-			default : 	
-				score = Integer.parseInt(tmp);
-			}
-		}
-		return score;
-	}//will try to seperate to two.... 
+	//I moved method calculating score to Rule. but still can use the value through parameters
+	
+	public void showCard(List<Card> c) {
+		System.out.println("==============");
+		for(Card cd : openCard())
+		{System.out.print("[ ");
+		System.out.printf("%s, %s",cd.getPattern(),cd.getDenomination());
+		System.out.println(" ]");}
+		System.out.println("==============");
+		}	
+	}
 	
